@@ -26,7 +26,11 @@ jobs:
          echo "Iniciando login"
          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
          echo "Iniciando login"
-         
+
+    - name: Build Doker Image
+      run: |
+        docker build -t caguanet/nest-graphql-dev:0.0.2 .
         
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build Doker Image
+      run: |
+        docker push caguanet/nest-graphql-dev:0.0.2
