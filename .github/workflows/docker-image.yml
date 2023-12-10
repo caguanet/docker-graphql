@@ -30,6 +30,7 @@ jobs:
     - name: Build Doker Image
       run: |
         docker build -t caguanet/nest-graphql-dev:0.0.2 .
+        docker build -t caguanet/nest-graphql-dev:latest .
         
     - name: Build Doker Image
       run: |
