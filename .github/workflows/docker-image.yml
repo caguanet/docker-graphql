@@ -37,16 +37,16 @@ jobs:
          echo "Iniciando login"
          echo "New version: $NEW_VERSION!!!!!!🚀🚀🚀🚀"
 
-     - name: Build Doker Image
-       env:
-        NEW_VERSION: ${{ steps.version.outputs.version }}
-       run: |
-         docker build -t caguanet/nest-graphql-dev:$NEW_VERSION .
-         docker build -t caguanet/nest-graphql-dev:latest .
-       
-     - name: Push Doker Image
-       env:
+    - name: Build Doker Image
+      env:
+       NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+       docker build -t caguanet/nest-graphql-dev:$NEW_VERSION .
+       docker build -t caguanet/nest-graphql-dev:latest .
+         
+    - name: Push Doker Image
+      env:
         NEW_VERSION: ${{ steps.version.outputs.version }}   
-       run: |
-         docker push caguanet/nest-graphql-dev:$NEW_VERSION
-         docker push caguanet/nest-graphql-dev:latest
+      run: |
+       docker push caguanet/nest-graphql-dev:$NEW_VERSION
+       docker push caguanet/nest-graphql-dev:latest
